@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Отзывы{% endblock %}
+{% block content %}
+<h1>Оставить отзыв</h1>
+<div class="col-md-6">
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.full_name.help_text }}
+        </div>
+        <div class="form-group">
+            {{ form.full_name }}
+        </div>
+        <div>
+            {{ form.email.help_text }}
+        </div>
+        <div class="form-group">
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.text.help_text }}
+        </div>
+        <div class="form-group">
+            {{ form.text }}
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+<div class="col-md-6">
+    <h2>Отзывы</h2>
+    {% for review in reviews %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ review.full_name }}</h5>
+                <p class="card-text">Email: {{ review.email }}</p>
+                <p class="card-text">{{ review.text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

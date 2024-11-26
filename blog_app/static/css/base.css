@@ -1,0 +1,22 @@
+p {
+    max-width: 80%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+}
+
+form {
+    margin: 20px 0;
+}
